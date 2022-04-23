@@ -1,7 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[40,)"
 license = "MIT"
-#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
+issueTrackerURL = "https://github.com/gamma-delta/ThePhantomMenace/issues"
 [[mods]] #mandatory
 # The modid of the mod
 modId = "thephantommenace" #mandatory
@@ -12,7 +12,7 @@ logoFile = "logo.png"
 authors = "petrakat" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description = '''
-Make speed potions (or whatever you like, for mod authors)
+Make speed potions and glow berries (or whatever you like, for modpack makers) reset your sleep timer
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.thephantommenace]] #optional

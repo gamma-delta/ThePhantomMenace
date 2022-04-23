@@ -1,19 +1,7 @@
-# Template Mod
+# The Phantom Menace
 
-for Forge Minecraft Modding, yahoo
+Helps you deal wth the menace that is the Phantom Mod.
 
-## To Set Up
+Getting the Speed potion effect, or eating a Glow Berry, will reset your sleep timer as if you had slept in a bed.
 
-1. Import the project and let Gradle do its thing
-2. Swap the comments on the mappings so it uses Parchment and `genIntellijRuns`
-3. Change the mod ID and name in the `mods.toml`
-4. Move the `TemplateMod` file to where it needs to go
-
-### To Get CI Set Up And Appease My Patrons
-
-1. In Jenkins, create a new "Multibranch Pipeline"
-2. Add a Branch Source:
-    - Repo View Creds
-    - Github repo URL
-    - Build strategies: named branches, exact name, `main`
-3. Add (the Discord `git-log` channel url) and `https://ci.blamejared.com/github-webhook/` as webhooks in Github
+**Modpack Makers:** you can customize which potion effects/items reset the timer!
