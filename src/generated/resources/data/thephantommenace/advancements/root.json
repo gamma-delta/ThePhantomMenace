@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "title": {
+      "translate": "advancement.thephantommenace:root"
+    },
+    "description": {
+      "translate": "advancement.thephantommenace:root.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "minecraft:textures/block/light_gray_wool.png"
+  },
+  "criteria": {
+    "stave_off_phantom": {
+      "trigger": "thephantommenace:stave_off_phantoms",
+      "conditions": {}
+    }
+  },
+  "requirements": [
+    [
+      "stave_off_phantom"
+    ]
+  ]
+}
