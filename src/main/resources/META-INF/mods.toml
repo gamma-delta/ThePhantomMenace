@@ -10,6 +10,7 @@ displayName = "The Phantom Menace" #mandatory
 logoFile = "logo.png"
 # A text field displayed in the mod UI
 authors = "petrakat" #optional
+credits = "naj77 for the logo"
 # The description text for the mod (multi line!) (#mandatory)
 description = '''
 Make speed potions and glow berries (or whatever you like, for modpack makers) reset your sleep timer
@@ -32,5 +33,12 @@ modId = "minecraft"
 mandatory = true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
 versionRange = "[1.18.2,1.19)"
+ordering = "NONE"
+side = "BOTH"
+[[dependencies.thephantommenace]]
+modId = "paucal"
+mandatory = true
+# This version range declares a minimum of the current minecraft version up to but not including the next major version
+versionRange = "[0.3.4,0.4.0)"
 ordering = "NONE"
 side = "BOTH"
