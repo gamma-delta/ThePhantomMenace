@@ -21,9 +21,9 @@ public class ModAdvancementProvider extends PaucalAdvancementProvider {
     @Override
     protected void registerAdvancements(Consumer<Advancement> consumer, ExistingFileHelper fileHelper) {
         Advancement.Builder.advancement()
-            .display(simpleDisplayWithBackground(Items.PHANTOM_MEMBRANE, "root", FrameType.TASK,
-                new ResourceLocation("minecraft:textures/block/light_gray_wool.png")))
+            .display(simpleDisplay(Items.PHANTOM_MEMBRANE, "root", FrameType.TASK))
+            .parent(new ResourceLocation("adventure/sleep_in_bed"))
             .addCriterion("stave_off_phantom", new StaveOffPhantomsTrigger.Instance(EntityPredicate.Composite.ANY))
-            .save(consumer, prefix("root"));
+            .save(consumer, modLoc("root"), fileHelper);
     }
 }
