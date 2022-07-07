@@ -1,5 +1,6 @@
 package at.petrak.thephantommenance.datagen;
 
+import at.petrak.paucal.api.forge.datagen.PaucalForgeDatagenWrappers;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
@@ -10,8 +11,7 @@ public class ModDatagen {
         var efh = evt.getExistingFileHelper();
 
         if (evt.includeServer()) {
-            gen.addProvider(new ModAdvancementProvider(gen, efh));
+            gen.addProvider(PaucalForgeDatagenWrappers.addEFHToAdvancements(new ModAdvancementProvider(gen), efh));
         }
     }
-
 }

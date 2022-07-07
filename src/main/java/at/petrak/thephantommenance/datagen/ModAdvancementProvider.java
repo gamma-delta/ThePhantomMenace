@@ -9,17 +9,16 @@ import net.minecraft.advancements.critereon.EntityPredicate;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
-import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.function.Consumer;
 
 public class ModAdvancementProvider extends PaucalAdvancementProvider {
-    public ModAdvancementProvider(DataGenerator generatorIn, ExistingFileHelper fileHelperIn) {
-        super(generatorIn, fileHelperIn, ThePhantomMenaceMod.MOD_ID);
+    public ModAdvancementProvider(DataGenerator generatorIn) {
+        super(generatorIn, ThePhantomMenaceMod.MOD_ID);
     }
 
     @Override
-    protected void registerAdvancements(Consumer<Advancement> consumer, ExistingFileHelper fileHelper) {
+    protected void makeAdvancements(Consumer<Advancement> consumer) {
         Advancement.Builder.advancement()
             .display(simpleDisplay(Items.PHANTOM_MEMBRANE, "root", FrameType.TASK))
             .parent(new ResourceLocation("adventure/sleep_in_bed"))
