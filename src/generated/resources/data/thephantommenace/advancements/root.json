@@ -1,24 +1,24 @@
 {
   "parent": "minecraft:adventure/sleep_in_bed",
+  "criteria": {
+    "stave_off_phantom": {
+      "conditions": {},
+      "trigger": "thephantommenace:stave_off_phantoms"
+    }
+  },
   "display": {
-    "icon": {
-      "item": "minecraft:phantom_membrane"
-    },
-    "title": {
-      "translate": "advancement.thephantommenace:root"
-    },
+    "announce_to_chat": true,
     "description": {
       "translate": "advancement.thephantommenace:root.desc"
     },
     "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:phantom_membrane"
+    },
     "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
-  "criteria": {
-    "stave_off_phantom": {
-      "trigger": "thephantommenace:stave_off_phantoms",
-      "conditions": {}
+    "title": {
+      "translate": "advancement.thephantommenace:root"
     }
   },
   "requirements": [

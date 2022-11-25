@@ -3,22 +3,18 @@ package at.petrak.thephantommenance;
 import at.petrak.thephantommenance.advancement.ModAdvancementTriggers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
-import net.minecraftforge.event.entity.living.PotionEvent;
+import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-
-import static at.petrak.thephantommenance.ThePhantomMenaceMod.modLoc;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class StaveOffPhantoms {
-    public static final TagKey<Item> PHANTOM_BANISHER = ItemTags.create(modLoc("phantom_banisher"));
 
     @SubscribeEvent
-    public static void onPotion(PotionEvent.PotionAddedEvent evt) {
-        if (evt.getEntity() instanceof ServerPlayer player && ThePhantomMenaceConfig.caffeinatedPotionIDs.get()
-            .contains(evt.getPotionEffect().getEffect().getRegistryName().toString())) {
+    public static void onPotion(MobEffectEvent.Added evt) {
+        var effect = evt.getEffectInstance().getEffect();
+        if (evt.getEntity() instanceof ServerPlayer player &&
+            ForgeRegistries.MOB_EFFECTS.tags().getTag(ThePhantomMenaceMod.PHANTOM_BANISHER_EFFECT).contains(effect)) {
             player.getStats().setValue(player, Stats.CUSTOM.get(Stats.TIME_SINCE_REST), 0);
             ModAdvancementTriggers.STAVE_OFF_PHANTOMS.trigger(player);
         }
@@ -32,7 +28,7 @@ public class StaveOffPhantoms {
         }
 
         var usedItem = evt.getItem();
-        if (usedItem.is(PHANTOM_BANISHER)) {
+        if (usedItem.is(ThePhantomMenaceMod.PHANTOM_BANISHER_ITEM)) {
             player.getStats().setValue(player, Stats.CUSTOM.get(Stats.TIME_SINCE_REST), 0);
             ModAdvancementTriggers.STAVE_OFF_PHANTOMS.trigger(player);
         }
